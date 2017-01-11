@@ -1,0 +1,120 @@
+// LUI2
+// PAGEBAR
+
+
+.lui.pagebar when (@lui_pagebar_mixins_enabled = true){
+	.this(){
+		.lui.box-sizing.border-box();
+		.lui.clear.before();
+		.lui.clear.after();
+		.lui.flexbox.block();
+		.lui.flexbox.flex-direction(row);
+		.lui.flexbox.flex-wrap(wrap);
+
+		list-style: none; // IN CASE OF UL
+		font-size: 14px;
+		line-height: 14px;
+		padding: 0;
+		margin: 0;
+	}
+
+	.item-normal(){
+		margin: 2px;
+		display: inline-block;
+	}
+
+	.item-minimal(){
+		display: none;
+	}
+
+	.prev(){
+		&:before {
+			font-family: FontAwesome;
+			content: "\f053";
+		}
+
+		span {
+			padding: 0 0 0 10px;
+		}
+	}
+
+	.next(){
+		&:after {
+			font-family: FontAwesome;
+			content: "\f054";
+		}
+
+		span {
+			padding: 0 10px 0 0;
+		}
+	}
+
+	.number(){
+		display: block;
+		height: 37px;
+		line-height: 37px;
+		padding: 0 15px;
+		color: @lui_pagebar_defailt_item_color;
+		text-decoration: none;
+		background: @lui_pagebar_defailt_item_bg;
+		border-radius: 5px;
+		cursor: pointer;
+
+		&:hover {
+			color: inherit;
+			background: darken(@lui_pagebar_defailt_item_bg, 10%);
+		}
+	}
+
+	.number-dark(){
+		background: @lui_pagebar_dark_item_bg;
+		color: @lui_pagebar_dark_item_color;
+
+		&:hover {
+			background: darken(@lui_pagebar_dark_item_bg, 10%);
+		}
+	}
+
+	.input(){
+		background: none;
+		border-radius: 5px;
+		height: 37px;
+		line-height: 17px;
+		padding: 10px 15px 10px 10px;
+
+		@media (max-width:@grid_sm_end){
+			& when (@lui_responsive = true){ 
+				padding: 10px 15px 10px 0;
+			}
+		}
+
+		label {
+			margin-right: 14px;
+			padding-right: 14px;
+		}
+
+		// TODO: INPUT STYLES FROM .lui.form
+		input {
+			.lui.form.item.value.input(60px);
+			text-align: center;
+			float: right;
+			margin: -10px -15px;
+
+			// HIDE ARROWS
+			-webkit-appearance: textfield;
+			-moz-appearance: textfield;
+
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+
+		}
+	}
+
+	.inactive(){
+		cursor: default;
+		pointer-events: none;
+	}
+}
