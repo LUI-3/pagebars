@@ -27,13 +27,24 @@
 			.lui.pagebar.input();
 		}
 
+		&.active > a {
+			.lui.pagebar.number-active();
+		}
+
 		&.inactive > a {
 			.lui.pagebar.inactive();
 		}
 	}
 
-	&.dark > li > a {
-		.lui.pagebar.number-dark();
+	&.dark > li {
+		
+		& > a {
+			.lui.pagebar.number-dark();
+		}
+
+		&.active > a {
+			.lui.pagebar.number-dark-active();
+		}
 	}
 
 	&.xs-minimal {
