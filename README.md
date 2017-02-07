@@ -1,4 +1,4 @@
-[![GitHub license](http://content.github.lui-3.cz/LUI-3_logo-small.png)](//lui-3.cz/)
+[![LUI-3 logo](http://content.github.lui-3.cz/LUI-3_logo-small.png)](//lui-3.cz/)
 # Pagebars
 This repository contains `LUI-3_pagebars` components. Pagebars are responsive friendly and really easy to customize.
 
