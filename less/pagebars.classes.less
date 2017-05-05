@@ -37,7 +37,6 @@
 	}
 
 	&.dark > li {
-		
 		& > a {
 			.lui.pagebar.number-dark();
 		}
@@ -47,7 +46,8 @@
 		}
 	}
 
-	&.xs-minimal {
+	&.xs-minimal,
+	&.minimal {
 		.lui.flexbox.justify-content(~"space-between");
 
 		& > li {
@@ -61,45 +61,54 @@
 		}
 	}
 
-	&.xs-va-top {
+	&.xs-va-top,
+	&.va-top {
 		.lui.flexbox.align-content(flex-start);
 		.lui.flexbox.align-items(flex-start);
 	}
 
-	&.xs-va-bottom {
+	&.xs-va-bottom,
+	&.va-bottom {
 		.lui.flexbox.align-content(flex-start);
 		.lui.flexbox.align-items(flex-end);
 	}
 
-	&.xs-va-middle {
+	&.xs-va-middle,
+	&.va-middle {
 		.lui.flexbox.align-content(flex-start);
 		.lui.flexbox.align-items(center);
 	}
 
-	&.xs-va-center {
+	&.xs-va-center,
+	&.a-center {
 		.xs-va-middle();
 	}
 
-	&.xs-a-left {
+	&.xs-a-left,
+	&.a-left {
 		.lui.flexbox.justify-content(flex-start);
 		.lui.flexbox.align-content(flex-start);
 	}
 
-	&.xs-a-right {
+	&.xs-a-right,
+	&.a-right {
 		.lui.flexbox.justify-content(flex-end);
 		.lui.flexbox.align-content(flex-start);
 	}
 
-	&.xs-a-middle {
+	&.xs-a-middle,
+	&.a-middle {
 		.lui.flexbox.justify-content(center);
 		.lui.flexbox.align-content(flex-start);
 	}
 
-	&.xs-a-center {
+	&.xs-a-center,
+	&.a-center {
 		.xs-a-middle();
 	}
 
-	&.xs-normal li {
+	&.xs-normal li,
+	&.normal li {
 		.lui.pagebar.item-normal();
 	}
 
