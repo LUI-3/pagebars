@@ -17,3 +17,11 @@
 
 @lui_pagebar_dark_item_bg:			#222c32;
 @lui_pagebar_dark_item_color:		white;
+
+
+// DEBUG MODE - CONFIG VALUES
+.lui_config_values when (@lui_debug = true){
+	--lui_pagebar_config: "LUI-3_pagebars/less/pagebars.config.less";
+	--lui_pagebar_class_enabled: @lui_pagebar_class_enabled;
+	--lui_pagebar_mixins_enabled: @lui_pagebar_mixins_enabled;
+}
