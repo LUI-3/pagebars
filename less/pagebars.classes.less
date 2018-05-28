@@ -46,7 +46,6 @@
 		}
 	}
 
-	&.xs-minimal,
 	&.minimal {
 		.lui.flexbox.justify-content(~"space-between");
 
@@ -61,59 +60,113 @@
 		}
 	}
 
-	&.xs-va-top,
+	&.xs-minimal when (@grid_xs_enable = true){
+		.lui.flexbox.justify-content(~"space-between");
+
+		& > li {
+			.lui.pagebar.item-minimal();
+
+			&.prev,
+			&.next,
+			&.input {
+				.lui.pagebar.item-normal();
+			}
+		}
+	}
+
 	&.va-top {
 		.lui.flexbox.align-content(flex-start);
 		.lui.flexbox.align-items(flex-start);
 	}
 
-	&.xs-va-bottom,
+	&.xs-va-top when (@grid_xs_enable = true){
+		.lui.flexbox.align-content(flex-start);
+		.lui.flexbox.align-items(flex-start);
+	}
+
 	&.va-bottom {
 		.lui.flexbox.align-content(flex-start);
 		.lui.flexbox.align-items(flex-end);
 	}
 
-	&.xs-va-middle,
+	&.xs-va-bottom when (@grid_xs_enable = true){
+		.lui.flexbox.align-content(flex-start);
+		.lui.flexbox.align-items(flex-end);
+	}
+
+
 	&.va-middle {
 		.lui.flexbox.align-content(flex-start);
 		.lui.flexbox.align-items(center);
 	}
 
-	&.xs-va-center,
+	&.xs-va-middle when (@grid_xs_enable = true){
+		.lui.flexbox.align-content(flex-start);
+		.lui.flexbox.align-items(center);
+	}
+
+
 	&.a-center {
 		.xs-va-middle();
 	}
 
-	&.xs-a-left,
+	&.xs-va-center when (@grid_xs_enable = true){
+		.xs-va-middle();
+	}
+
+
 	&.a-left {
 		.lui.flexbox.justify-content(flex-start);
 		.lui.flexbox.align-content(flex-start);
 	}
 
-	&.xs-a-right,
+	&.xs-a-left when (@grid_xs_enable = true){
+		.lui.flexbox.justify-content(flex-start);
+		.lui.flexbox.align-content(flex-start);
+	}
+
+
 	&.a-right {
 		.lui.flexbox.justify-content(flex-end);
 		.lui.flexbox.align-content(flex-start);
 	}
 
-	&.xs-a-middle,
+	&.xs-a-right when (@grid_xs_enable = true){
+		.lui.flexbox.justify-content(flex-end);
+		.lui.flexbox.align-content(flex-start);
+	}
+
+
 	&.a-middle {
 		.lui.flexbox.justify-content(center);
 		.lui.flexbox.align-content(flex-start);
 	}
 
-	&.xs-a-center,
+	&.xs-a-middle when (@grid_xs_enable = true){
+		.lui.flexbox.justify-content(center);
+		.lui.flexbox.align-content(flex-start);
+	}
+
+
 	&.a-center {
 		.xs-a-middle();
 	}
 
-	&.xs-normal li,
+	&.xs-a-center when (@grid_xs_enable = true){
+		.xs-a-middle();
+	}
+
+
 	&.normal li {
 		.lui.pagebar.item-normal();
 	}
 
+	&.xs-normal li when (@grid_xs_enable = true){
+		.lui.pagebar.item-normal();
+	}
+
 	@media (min-width:@grid_sm_start){
-		&.sm-minimal {
+		&.sm-minimal when (@grid_sm_enable = true){
 			.lui.flexbox.justify-content(space-between);
 
 			& > li {
@@ -127,51 +180,51 @@
 			}
 		}
 
-		&.sm-va-top {
+		&.sm-va-top when (@grid_sm_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-start);
 		}
 
-		&.sm-va-bottom {
+		&.sm-va-bottom when (@grid_sm_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-end);
 		}
 
-		&.sm-va-middle {
+		&.sm-va-middle when (@grid_sm_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(center);
 		}
 
-		&.sm-va-center {
+		&.sm-va-center when (@grid_sm_enable = true){
 			.sm-va-middle();
 		}
 
-		&.sm-a-left {
+		&.sm-a-left when (@grid_sm_enable = true){
 			.lui.flexbox.justify-content(flex-start);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.sm-a-right {
+		&.sm-a-right when (@grid_sm_enable = true){
 			.lui.flexbox.justify-content(flex-end);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.sm-a-middle {
+		&.sm-a-middle when (@grid_sm_enable = true){
 			.lui.flexbox.justify-content(center);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.sm-a-center {
+		&.sm-a-center when (@grid_sm_enable = true){
 			.sm-a-middle();
 		}
 
-		&.sm-normal li {
+		&.sm-normal li when (@grid_sm_enable = true){
 			.lui.pagebar.item-normal();
 		}
 	}
 
 	@media (min-width:@grid_md_start){
-		&.md-minimal {
+		&.md-minimal when (@grid_md_enable = true){
 			.lui.flexbox.justify-content(space-between);
 
 			& > li {
@@ -185,51 +238,51 @@
 			}
 		}
 
-		&.md-va-top {
+		&.md-va-top when (@grid_md_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-start);
 		}
 
-		&.md-va-bottom {
+		&.md-va-bottom when (@grid_md_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-end);
 		}
 
-		&.md-va-middle {
+		&.md-va-middle when (@grid_md_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(center);
 		}
 
-		&.md-va-center {
+		&.md-va-center when (@grid_md_enable = true){
 			.md-va-middle();
 		}
 
-		&.md-a-left {
+		&.md-a-left when (@grid_md_enable = true){
 			.lui.flexbox.justify-content(flex-start);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.md-a-right {
+		&.md-a-right when (@grid_md_enable = true){
 			.lui.flexbox.justify-content(flex-end);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.md-a-middle {
+		&.md-a-middle when (@grid_md_enable = true){
 			.lui.flexbox.justify-content(center);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.md-a-center {
+		&.md-a-center when (@grid_md_enable = true){
 			.md-a-middle();
 		}
 
-		&.md-normal li {
+		&.md-normal li when (@grid_md_enable = true){
 			.lui.pagebar.item-normal();
 		}
 	}
 
 	@media (min-width:@grid_lg_start){
-		&.lg-minimal {
+		&.lg-minimal when (@grid_lg_enable = true){
 			.lui.flexbox.justify-content(space-between);
 
 			& > li {
@@ -243,51 +296,51 @@
 			}
 		}
 
-		&.lg-va-top {
+		&.lg-va-top when (@grid_lg_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-start);
 		}
 
-		&.lg-va-bottom {
+		&.lg-va-bottom when (@grid_lg_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-end);
 		}
 
-		&.lg-va-middle {
+		&.lg-va-middle when (@grid_lg_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(center);
 		}
 
-		&.lg-va-center {
+		&.lg-va-center when (@grid_lg_enable = true){
 			.lg-va-middle();
 		}
 
-		&.lg-a-left {
+		&.lg-a-left when (@grid_lg_enable = true){
 			.lui.flexbox.justify-content(flex-start);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.lg-a-right {
+		&.lg-a-right when (@grid_lg_enable = true){
 			.lui.flexbox.justify-content(flex-end);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.lg-a-middle {
+		&.lg-a-middle when (@grid_lg_enable = true){
 			.lui.flexbox.justify-content(center);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.lg-a-center {
+		&.lg-a-center when (@grid_lg_enable = true){
 			.lg-a-middle();
 		}
 
-		&.lg-normal li {
+		&.lg-normal li when (@grid_lg_enable = true){
 			.lui.pagebar.item-normal();
 		}
 	}
 
 	@media (min-width:@grid_xl_start){
-		&.xl-minimal {
+		&.xl-minimal when (@grid_xl_enable = true){
 			.lui.flexbox.justify-content(space-between);
 
 			& > li {
@@ -301,51 +354,51 @@
 			}
 		}
 
-		&.xl-va-top {
+		&.xl-va-top when (@grid_xl_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-start);
 		}
 
-		&.xl-va-bottom {
+		&.xl-va-bottom when (@grid_xl_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-end);
 		}
 
-		&.xl-va-middle {
+		&.xl-va-middle when (@grid_xl_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(center);
 		}
 
-		&.xl-va-center {
+		&.xl-va-center when (@grid_xl_enable = true){
 			.xl-va-middle();
 		}
 
-		&.xl-a-left {
+		&.xl-a-left when (@grid_xl_enable = true){
 			.lui.flexbox.justify-content(flex-start);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.xl-a-right {
+		&.xl-a-right when (@grid_xl_enable = true){
 			.lui.flexbox.justify-content(flex-end);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.xl-a-middle {
+		&.xl-a-middle when (@grid_xl_enable = true){
 			.lui.flexbox.justify-content(center);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.xl-a-center {
+		&.xl-a-center when (@grid_xl_enable = true){
 			.xl-a-middle();
 		}
 
-		&.xl-normal li {
+		&.xl-normal li when (@grid_xl_enable = true){
 			.lui.pagebar.item-normal();
 		}
 	}
 
 	@media (min-width:@grid_xxl_start){
-		&.xxl-minimal {
+		&.xxl-minimal when (@grid_xxl_enable = true){
 			.lui.flexbox.justify-content(space-between);
 
 			& > li {
@@ -359,51 +412,51 @@
 			}
 		}
 
-		&.xxl-va-top {
+		&.xxl-va-top when (@grid_xxl_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-start);
 		}
 
-		&.xxl-va-bottom {
+		&.xxl-va-bottom when (@grid_xxl_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-end);
 		}
 
-		&.xxl-va-middle {
+		&.xxl-va-middle when (@grid_xxl_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(center);
 		}
 
-		&.xxl-va-center {
+		&.xxl-va-center when (@grid_xxl_enable = true){
 			.xxl-va-middle();
 		}
 
-		&.xxl-a-left {
+		&.xxl-a-left when (@grid_xxl_enable = true){
 			.lui.flexbox.justify-content(flex-start);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.xxl-a-right {
+		&.xxl-a-right when (@grid_xxl_enable = true){
 			.lui.flexbox.justify-content(flex-end);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.xxl-a-middle {
+		&.xxl-a-middle when (@grid_xxl_enable = true){
 			.lui.flexbox.justify-content(center);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.xxl-a-center {
+		&.xxl-a-center when (@grid_xxl_enable = true){
 			.xxl-a-middle();
 		}
 
-		&.xxl-normal li {
+		&.xxl-normal li when (@grid_xxl_enable = true){
 			.lui.pagebar.item-normal();
 		}
 	}
 
 	@media (min-width:@grid_xxxl_start){
-		&.xxxl-minimal {
+		&.xxxl-minimal when (@grid_xxxl_enable = true){
 			.lui.flexbox.justify-content(space-between);
 
 			& > li {
@@ -417,45 +470,45 @@
 			}
 		}
 
-		&.xxxl-va-top {
+		&.xxxl-va-top when (@grid_xxxl_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-start);
 		}
 
-		&.xxxl-va-bottom {
+		&.xxxl-va-bottom when (@grid_xxxl_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(flex-end);
 		}
 
-		&.xxxl-va-middle {
+		&.xxxl-va-middle when (@grid_xxxl_enable = true){
 			.lui.flexbox.align-content(flex-start);
 			.lui.flexbox.align-items(center);
 		}
 
-		&.xxxl-va-center {
+		&.xxxl-va-center when (@grid_xxxl_enable = true){
 			.xxxl-va-middle();
 		}
 
-		&.xxxl-a-left {
+		&.xxxl-a-left when (@grid_xxxl_enable = true){
 			.lui.flexbox.justify-content(flex-start);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.xxxl-a-right {
+		&.xxxl-a-right when (@grid_xxxl_enable = true){
 			.lui.flexbox.justify-content(flex-end);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.xxxl-a-middle {
+		&.xxxl-a-middle when (@grid_xxxl_enable = true){
 			.lui.flexbox.justify-content(center);
 			.lui.flexbox.align-content(flex-start);
 		}
 
-		&.xxxl-a-center {
+		&.xxxl-a-center when (@grid_xxxl_enable = true){
 			.xxxl-a-middle();
 		}
 
-		&.xxxl-normal li {
+		&.xxxl-normal li when (@grid_xxxl_enable = true){
 			.lui.pagebar.item-normal();
 		}
 	}
